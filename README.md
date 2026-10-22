@@ -1,71 +1,124 @@
 # ExpenseTrackerAPI
 
-A secure and scalable RESTful API built using ASP.NET Core that allows users to manage personal income and expenses efficiently. The application includes authentication, category and expense management, dashboard analytics, pagination, and soft delete functionality.
+A secure personal finance REST API built using ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server. ExpenseTrackerAPI helps users manage their income and expenses, organize transactions by category, and track their financial position through dashboard analytics.
 
----
+I built this project to strengthen my backend development skills by implementing real-world API features, including JWT authentication, user-specific data access, pagination, soft deletion, and unit testing.
+
+## Why I Built This Project
+
+I built ExpenseTrackerAPI to help people manage their income and expenses more easily, understand their spending habits, and keep track of their financial position without struggling to organize their money.
+
+The goal was to make personal finance management simpler by bringing expense tracking, category-wise organization, and financial summaries together in one place. While building it, I also wanted to gain practical experience developing a secure backend application using ASP.NET Core, with features such as JWT authentication, user-specific data access, pagination, and soft deletion.
 
 ## Features
 
-- JWT-based User Authentication (Register & Login)
-- User-specific Data Isolation
-- Category Management (Create, Update, Soft Delete)
-- Expense & Income Management
-- Dashboard Summary (Total Income, Total Expense, Balance)
-- Pagination for Efficient Data Loading
-- Global Soft Delete Implementation
-- Unit Testing using xUnit
-
----
+- **JWT Authentication:** User registration and login with token-based authentication.
+- **User-Specific Data Isolation:** Restricts access to each user's own financial records.
+- **Category Management:** Create, update, and soft-delete categories.
+- **Income and Expense Management:** Manage financial transactions through RESTful API endpoints.
+- **Dashboard Analytics:** Calculate total income, total expenses, and remaining balance.
+- **Pagination:** Retrieve expense records in manageable pages, with limits on page size.
+- **Global Soft Delete:** Exclude deleted records from normal queries without permanently removing them from the database.
+- **Unit Testing:** Test application behavior using xUnit.
 
 ## Tech Stack
 
-- ASP.NET Core Web API
-- Entity Framework Core
-- SQL Server
-- JWT Authentication
-- LINQ
-- xUnit (Unit Testing)
-- RESTful API Architecture
-
----
+- **Language:** C#
+- **Backend:** ASP.NET Core Web API (.NET 8)
+- **Database:** SQL Server
+- **ORM:** Entity Framework Core
+- **Authentication:** JWT Bearer Authentication
+- **Data Querying:** LINQ
+- **Testing:** xUnit
+- **API Tools:** Swagger / Postman
+- **Architecture:** RESTful API with controllers, services, models, and DTOs
 
 ## Project Structure
-ExpenseTrackerAPI
-│
-├── Controllers → API Endpoints
-├── Models → Entity Models
-├── DTOs → Data Transfer Objects
-├── Data → DbContext & Database Configuration
-├── Services → Business Logic
-├── Tests → Unit Tests
-├── appsettings.json → Application Configuration
+
+ExpenseTrackerAPI/
+├── Controllers/   # API endpoints
+├── Models/        # Entity models
+├── DTOs/           # Request and response objects
+├── Data/           # DbContext and database configuration
+├── Services/       # Business logic
+├── Tests/          # Unit tests
+├── appsettings.json
 └── README.md
 
----
 
-## API Capabilities
+## Key Implementation Details
 
-1. Secure login and registration using JWT
-2. Add, update, delete categories
-3. Add and manage expenses
-4. View paginated expense lists
-5. View dashboard summary with calculated balance
-6. Soft delete ensures data is not permanently removed
+- Implemented JWT-based authentication to protect secured endpoints.
+- Applied user-specific filtering to keep financial records isolated between users.
+- Used Entity Framework Core for database operations and entity relationships.
+- Implemented pagination with a maximum page-size limit to control the number of returned records.
+- Used global query filters for soft-deleted records.
+- Created dashboard calculations for income, expenses, and balance.
+- Organized the application into separate components to improve maintainability and testability.
 
----
+## How to Run Locally
+
+### Prerequisites
+
+- .NET 8 SDK
+- SQL Server or SQL Server LocalDB
+- Visual Studio or another .NET-compatible IDE
+
+### Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   cd ExpenseTrackerAPI
+   ```
+
+2. Configure your SQL Server connection string in `appsettings.json` or your local development configuration.
+
+3. Configure the JWT settings required by the application. Use a secure secret and do not commit production credentials.
+
+4. Apply the Entity Framework Core migrations:
+
+   ```bash
+   dotnet ef database update
+   ```
+
+   If the EF Core CLI tool is not installed, install it first. Ensure the project and startup project are configured correctly.
+
+5. Run the API:
+
+   ```bash
+   dotnet run
+   ```
+
+6. Open the Swagger URL shown in the terminal, if Swagger is enabled in the current environment, to explore and test the API endpoints.
+
+### Run Tests
+
+Run the test suite from the solution or repository root:
+
+```bash
+dotnet test
+```
 
 ## Learning Outcomes
 
-1. Implemented authentication and authorization
-2. Designed RESTful endpoints
-3. Applied pagination for performance optimization
-4. Implemented soft delete for data integrity
-5. Structured clean project architecture
-6. Practiced writing unit tests for API validation
+Through this project, I gained practical experience in:
 
----
+- Designing and implementing RESTful APIs using ASP.NET Core.
+- Implementing authentication and authorization with JWT.
+- Enforcing user-specific access to application data.
+- Working with Entity Framework Core and SQL Server.
+- Implementing pagination and global soft-delete behavior.
+- Writing unit tests using xUnit.
+- Structuring backend code for maintainability and easier testing.
+
+## Future Improvements
+
+- Add integration tests for API endpoints and database interactions.
+- Introduce Docker-based development and deployment.
+- Add CI/CD automation for building and testing the application.
+- Improve API documentation and production deployment configuration.
 
 ## Author
-
-Pallavi Rawal
-Computer Science Student
+**Pallavi Rawal**
