@@ -2,14 +2,6 @@
 
 A secure personal finance REST API built using ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server. ExpenseTrackerAPI helps users manage their income and expenses, organize transactions by category, and track their financial position through dashboard analytics.
 
-I built this project to strengthen my backend development skills by implementing real-world API features, including JWT authentication, user-specific data access, pagination, soft deletion, and unit testing.
-
-## Why I Built This Project
-
-I built ExpenseTrackerAPI to help people manage their income and expenses more easily, understand their spending habits, and keep track of their financial position without struggling to organize their money.
-
-The goal was to make personal finance management simpler by bringing expense tracking, category-wise organization, and financial summaries together in one place. While building it, I also wanted to gain practical experience developing a secure backend application using ASP.NET Core, with features such as JWT authentication, user-specific data access, pagination, and soft deletion.
-
 ## Features
 
 - **JWT Authentication:** User registration and login with token-based authentication.
@@ -120,5 +112,3 @@ Through this project, I gained practical experience in:
 - Add CI/CD automation for building and testing the application.
 - Improve API documentation and production deployment configuration.
 
-## Author
-**Pallavi Rawal**
